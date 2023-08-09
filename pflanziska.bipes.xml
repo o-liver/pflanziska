@@ -1,7 +1,7 @@
 <xml xmlns="https://bipes.net.br">
   <workspace>
     <field name="DEVICE">ESP32</field>
-    <field name="TIMESTAMP">1691325062836</field>
+    <field name="TIMESTAMP">1691577513492</field>
     <freeboard><![CDATA[{"version":1,"allow_edit":true,"plugins":[],"panes":[],"datasources":[],"columns":3}]]></freeboard>
     <databoard><![CDATA[{"currentWorkspace":"lkwxsrzq0oupmydgzp0c","workspace:lkwxsrzq0oupmydgzp0c":[]}]]></databoard> 
   </workspace>
@@ -11,8 +11,8 @@
     <variable id="Tu#1qo|lwyYMe`Ad:+zB">maxValue</variable>
     <variable id="hV~X/{FOp_4FNLKQ!PV*">minValue</variable>
     <variable id=",ScbQ5ZJngW%Rih@dDw}">WATER_VALUE</variable>
-    <variable id="|~K%}JqAAzI@tXP(.tQ%">percentage</variable>
     <variable id="pXsNe.E*(zRpf4jhDypj">range</variable>
+    <variable id="|~K%}JqAAzI@tXP(.tQ%">percentage</variable>
     <variable id="`/]rb0V^iQ_yjMn5Y-]R">diff</variable>
     <variable id="op4MZDPYimY]YM}|65?S">soilMoistureValue</variable>
     <variable id="H$Zd@@m)imX$y6/qb8UK">soilMoisturePercentage</variable>
@@ -20,7 +20,7 @@
   <block type="project_metadata" id="w=2*KW;ZZcYwL~UK-8wH" x="-812" y="-1162">
     <value name="project_author">
       <shadow type="text" id="`E]md]7HIN!*ydXJ9ibg">
-        <field name="TEXT">Oliver</field>
+        <field name="TEXT">Ol</field>
       </shadow>
     </value>
     <value name="project_iot_id">
@@ -30,6 +30,23 @@
     </value>
     <value name="project_description">
       <shadow type="text" id="rke`%Ll5If}*,V@b2X5n">
+        <field name="TEXT">Pflanziska</field>
+      </shadow>
+    </value>
+  </block>
+  <block type="project_metadata" id="?Qx}8Ur}-ncQ0OtLSabf" x="-812" y="-1162">
+    <value name="project_author">
+      <shadow type="text" id="{Q~AUKx}se[?FvfA%/_b">
+        <field name="TEXT">Oliver</field>
+      </shadow>
+    </value>
+    <value name="project_iot_id">
+      <shadow type="math_number" id="|1jPW8cgy{]dcCcP,bWf">
+        <field name="NUM">0</field>
+      </shadow>
+    </value>
+    <value name="project_description">
+      <shadow type="text" id="d{-OQF/Z++_,zxlGCr=:">
         <field name="TEXT">Pflanziska</field>
       </shadow>
     </value>
@@ -55,7 +72,7 @@
     <field name="VAR" id="FQW2N,C:;QXmjl_DVn3R">AIR_VALUE</field>
     <value name="VALUE">
       <block type="math_number" id="IeBv3-nl^7C+ht!c#TH:">
-        <field name="NUM">505</field>
+        <field name="NUM">515</field>
       </block>
     </value>
     <next>
@@ -63,7 +80,7 @@
         <field name="VAR" id=",ScbQ5ZJngW%Rih@dDw}">WATER_VALUE</field>
         <value name="VALUE">
           <block type="math_number" id="v(SrD-2MEt}r9L1_f}@f">
-            <field name="NUM">232</field>
+            <field name="NUM">230</field>
           </block>
         </value>
         <next>
@@ -156,7 +173,7 @@
                                     <next>
                                       <block type="text_print" id="UFRIY$E:Dic=5bzG(!hc">
                                         <value name="TEXT">
-                                          <shadow xmlns="https://bipes.net.br" type="text">
+                                          <shadow type="text" id="7nrkrYy;#a[]*GECSDy1">
                                             <field name="TEXT">abc</field>
                                           </shadow>
                                           <block type="variables_get" id="pv_]/+YP$mPC6/O{ED($">
@@ -232,7 +249,7 @@
           <block type="math_arithmetic" id="rRdR!6qJADK-byLCbNJi">
             <field name="OP">MINUS</field>
             <value name="A">
-              <shadow type="math_number" id="RPn!M-]Bk{8T7D.@1|%s">
+              <shadow xmlns="https://bipes.net.br" type="math_number" id="RPn!M-]Bk{8T7D.@1|%s">
                 <field name="NUM">1</field>
               </shadow>
               <block type="variables_get" id="V#/@=nnJ|u8PMbD,Q9rC">
@@ -240,7 +257,7 @@
               </block>
             </value>
             <value name="B">
-              <shadow type="math_number">
+              <shadow xmlns="https://bipes.net.br" type="math_number">
                 <field name="NUM">1</field>
               </shadow>
               <block type="variables_get" id="p_2K{bkhfOw|K!lr`?l0">
@@ -256,7 +273,7 @@
               <block type="math_arithmetic" id="8e|#TweF!D|l!Qu.I@Wr">
                 <field name="OP">MINUS</field>
                 <value name="A">
-                  <shadow type="math_number">
+                  <shadow xmlns="https://bipes.net.br" type="math_number">
                     <field name="NUM">1</field>
                   </shadow>
                   <block type="variables_get" id="eom^Y5KND`cQF2I.j]fY">
@@ -264,7 +281,7 @@
                   </block>
                 </value>
                 <value name="B">
-                  <shadow type="math_number">
+                  <shadow xmlns="https://bipes.net.br" type="math_number">
                     <field name="NUM">1</field>
                   </shadow>
                   <block type="variables_get" id="/_3lHeGRt=2Y{N,lQ?!v">
@@ -277,36 +294,44 @@
               <block type="variables_set" id="Mdv_WbF^rlPkQ::O!.!o">
                 <field name="VAR" id="|~K%}JqAAzI@tXP(.tQ%">percentage</field>
                 <value name="VALUE">
-                  <block type="math_arithmetic" id="@$`0F9avx*J#@=)ARhfd">
-                    <field name="OP">MULTIPLY</field>
-                    <value name="A">
-                      <shadow type="math_number" id="/!rj($m3kr$swi-S*ic*">
-                        <field name="NUM">1</field>
+                  <block type="math_round" id="ODyffaEwlO5DK}z^[%]c">
+                    <field name="OP">ROUND</field>
+                    <value name="NUM">
+                      <shadow type="math_number" id="3gD0F#_ZBZieH^?8Ra2W">
+                        <field name="NUM">3.1</field>
                       </shadow>
-                      <block type="math_arithmetic" id="L{D4#?,2RO:O`wm^N3R3">
-                        <field name="OP">DIVIDE</field>
+                      <block type="math_arithmetic" id="@$`0F9avx*J#@=)ARhfd">
+                        <field name="OP">MULTIPLY</field>
                         <value name="A">
-                          <shadow type="math_number">
+                          <shadow xmlns="https://bipes.net.br" type="math_number" id="/!rj($m3kr$swi-S*ic*">
                             <field name="NUM">1</field>
                           </shadow>
-                          <block type="variables_get" id="R39-ch!)Bkr+ER*t%cT_">
-                            <field name="VAR" id="`/]rb0V^iQ_yjMn5Y-]R">diff</field>
+                          <block type="math_arithmetic" id="L{D4#?,2RO:O`wm^N3R3">
+                            <field name="OP">DIVIDE</field>
+                            <value name="A">
+                              <shadow xmlns="https://bipes.net.br" type="math_number">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="R39-ch!)Bkr+ER*t%cT_">
+                                <field name="VAR" id="`/]rb0V^iQ_yjMn5Y-]R">diff</field>
+                              </block>
+                            </value>
+                            <value name="B">
+                              <shadow xmlns="https://bipes.net.br" type="math_number">
+                                <field name="NUM">1</field>
+                              </shadow>
+                              <block type="variables_get" id="]qHRg_va2D;0!9BB@by:">
+                                <field name="VAR" id="pXsNe.E*(zRpf4jhDypj">range</field>
+                              </block>
+                            </value>
                           </block>
                         </value>
                         <value name="B">
-                          <shadow type="math_number">
-                            <field name="NUM">1</field>
+                          <shadow type="math_number" id="J3Wm?|0an=M5Wkh}S9NM">
+                            <field name="NUM">100</field>
                           </shadow>
-                          <block type="variables_get" id="]qHRg_va2D;0!9BB@by:">
-                            <field name="VAR" id="pXsNe.E*(zRpf4jhDypj">range</field>
-                          </block>
                         </value>
                       </block>
-                    </value>
-                    <value name="B">
-                      <shadow type="math_number" id="J3Wm?|0an=M5Wkh}S9NM">
-                        <field name="NUM">100</field>
-                      </shadow>
                     </value>
                   </block>
                 </value>
