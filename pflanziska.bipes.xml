@@ -1,7 +1,7 @@
 <xml xmlns="https://bipes.net.br">
   <workspace>
-    <field name="DEVICE">ESP32</field>
-    <field name="TIMESTAMP">1692510848903</field>
+    <field name="DEVICE">RPI_Pico</field>
+    <field name="TIMESTAMP">1694202799634</field>
     <freeboard><![CDATA[{"version":1,"allow_edit":true,"plugins":[],"panes":[],"datasources":[],"columns":3}]]></freeboard>
     <databoard><![CDATA[{"currentWorkspace":"lkwxsrzq0oupmydgzp0c","workspace:lkwxsrzq0oupmydgzp0c":[]}]]></databoard> 
   </workspace>
@@ -9,20 +9,20 @@
     <variable id="T@Qv[)qrTpwKY.j@qCF2">value</variable>
     <variable id="Tu#1qo|lwyYMe`Ad:+zB">maxValue</variable>
     <variable id="hV~X/{FOp_4FNLKQ!PV*">minValue</variable>
+    <variable id="FQW2N,C:;QXmjl_DVn3R">AIR_VALUE</variable>
     <variable id="/7k,|C$ctj(Z^6Hn`(yl">airValue</variable>
     <variable id="#l!-B!!;FE{JRv,it;!!">waterValue</variable>
-    <variable id="FQW2N,C:;QXmjl_DVn3R">AIR_VALUE</variable>
     <variable id="pXsNe.E*(zRpf4jhDypj">range</variable>
     <variable id="|~K%}JqAAzI@tXP(.tQ%">percentage</variable>
-    <variable id="op4MZDPYimY]YM}|65?S">soilMoistureValue</variable>
     <variable id=",ScbQ5ZJngW%Rih@dDw}">WATER_VALUE</variable>
+    <variable id="op4MZDPYimY]YM}|65?S">soilMoistureValue</variable>
     <variable id="`/]rb0V^iQ_yjMn5Y-]R">diff</variable>
     <variable id="s^Ef{[g329s6j:N_I5Fd">ULTRA_SOUND_TRIGGER_PIN</variable>
     <variable id="=l@K}6~3hlD`SA`u=Plj">ULTRA_SOUND_ECHO_PIN</variable>
     <variable id="H$Zd@@m)imX$y6/qb8UK">soilMoisturePercentage</variable>
     <variable id="w%XFcID32I1yDp+(b{gI">distance</variable>
   </variables>
-  <block type="project_metadata" id="w=2*KW;ZZcYwL~UK-8wH" x="-687" y="-1237">
+  <block type="project_metadata" id="w=2*KW;ZZcYwL~UK-8wH" x="-812" y="-1162">
     <value name="project_author">
       <shadow type="text" id="`E]md]7HIN!*ydXJ9ibg">
         <field name="TEXT">Oliver</field>
@@ -152,7 +152,7 @@
       </block>
     </value>
   </block>
-  <block type="variables_set" id="Zt;^?aIa^ODU=%/Y1Q,d" x="-754" y="-990">
+  <block type="variables_set" id="Zt;^?aIa^ODU=%/Y1Q,d" x="-588" y="-987">
     <field name="VAR" id="FQW2N,C:;QXmjl_DVn3R">AIR_VALUE</field>
     <value name="VALUE">
       <block type="math_number" id="IeBv3-nl^7C+ht!c#TH:">
@@ -172,8 +172,8 @@
             <field name="VAR" id="s^Ef{[g329s6j:N_I5Fd">ULTRA_SOUND_TRIGGER_PIN</field>
             <value name="VALUE">
               <block type="pinout" id="]8b.b+Itef2$a8B%wxQ{">
-                <field name="DEVICE">ESP32</field>
-                <field name="PIN">4</field>
+                <field name="DEVICE">RPI_Pico</field>
+                <field name="PIN">26</field>
               </block>
             </value>
             <next>
@@ -181,8 +181,8 @@
                 <field name="VAR" id="=l@K}6~3hlD`SA`u=Plj">ULTRA_SOUND_ECHO_PIN</field>
                 <value name="VALUE">
                   <block type="pinout" id="~:`^iHU9,M;YYT=9qK@N">
-                    <field name="DEVICE">ESP32</field>
-                    <field name="PIN">18</field>
+                    <field name="DEVICE">RPI_Pico</field>
+                    <field name="PIN">27</field>
                   </block>
                 </value>
                 <next>
@@ -191,7 +191,7 @@
                     <field name="DHT_PIN_MSG">trigger pin</field>
                     <field name="DHT_PIN_MSG">timeout (us)</field>
                     <value name="echo">
-                      <shadow type="pinout">
+                      <shadow xmlns="https://bipes.net.br" type="pinout">
                         <field name="DEVICE">ESP32</field>
                         <field name="PIN">2</field>
                       </shadow>
@@ -200,7 +200,7 @@
                       </block>
                     </value>
                     <value name="trigger">
-                      <shadow type="pinout">
+                      <shadow xmlns="https://bipes.net.br" type="pinout">
                         <field name="DEVICE">ESP32</field>
                         <field name="PIN">2</field>
                       </shadow>
@@ -333,8 +333,8 @@
             <field name="Width: ">0</field>
             <value name="pin">
               <shadow type="pinout" id="(Md2$~^.~BAIr7G27Dp|">
-                <field name="DEVICE">ESP32basic</field>
-                <field name="PIN">36</field>
+                <field name="DEVICE">RPI_Pico</field>
+                <field name="PIN">28</field>
               </shadow>
             </value>
           </block>
