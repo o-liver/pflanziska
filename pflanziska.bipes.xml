@@ -1,25 +1,16 @@
 <xml xmlns="https://bipes.net.br">
   <workspace>
     <field name="DEVICE">RPI_Pico</field>
-    <field name="TIMESTAMP">1694202799634</field>
+    <field name="TIMESTAMP">1694720899020</field>
     <freeboard><![CDATA[{"version":1,"allow_edit":true,"plugins":[],"panes":[],"datasources":[],"columns":3}]]></freeboard>
     <databoard><![CDATA[{"currentWorkspace":"lkwxsrzq0oupmydgzp0c","workspace:lkwxsrzq0oupmydgzp0c":[]}]]></databoard> 
   </workspace>
   <variables>
-    <variable id="T@Qv[)qrTpwKY.j@qCF2">value</variable>
-    <variable id="Tu#1qo|lwyYMe`Ad:+zB">maxValue</variable>
-    <variable id="hV~X/{FOp_4FNLKQ!PV*">minValue</variable>
     <variable id="FQW2N,C:;QXmjl_DVn3R">AIR_VALUE</variable>
-    <variable id="/7k,|C$ctj(Z^6Hn`(yl">airValue</variable>
-    <variable id="#l!-B!!;FE{JRv,it;!!">waterValue</variable>
-    <variable id="pXsNe.E*(zRpf4jhDypj">range</variable>
-    <variable id="|~K%}JqAAzI@tXP(.tQ%">percentage</variable>
     <variable id=",ScbQ5ZJngW%Rih@dDw}">WATER_VALUE</variable>
-    <variable id="op4MZDPYimY]YM}|65?S">soilMoistureValue</variable>
-    <variable id="`/]rb0V^iQ_yjMn5Y-]R">diff</variable>
+    <variable id="H$Zd@@m)imX$y6/qb8UK">soilMoisturePercentage</variable>
     <variable id="s^Ef{[g329s6j:N_I5Fd">ULTRA_SOUND_TRIGGER_PIN</variable>
     <variable id="=l@K}6~3hlD`SA`u=Plj">ULTRA_SOUND_ECHO_PIN</variable>
-    <variable id="H$Zd@@m)imX$y6/qb8UK">soilMoisturePercentage</variable>
     <variable id="w%XFcID32I1yDp+(b{gI">distance</variable>
   </variables>
   <block type="project_metadata" id="w=2*KW;ZZcYwL~UK-8wH" x="-812" y="-1162">
@@ -39,120 +30,7 @@
       </shadow>
     </value>
   </block>
-  <block type="procedures_defreturn" id=":8/.HHgb(.cd!B9dB*R$" x="87" y="-1188">
-    <mutation>
-      <arg name="value" varid="T@Qv[)qrTpwKY.j@qCF2"></arg>
-      <arg name="maxValue" varid="Tu#1qo|lwyYMe`Ad:+zB"></arg>
-      <arg name="minValue" varid="hV~X/{FOp_4FNLKQ!PV*"></arg>
-    </mutation>
-    <field name="NAME">calculatePercentageInRange</field>
-    <comment pinned="false" h="80" w="160">This will transform the soil moisture to a percent value, with 100% being the water value.</comment>
-    <statement name="STACK">
-      <block type="variables_set" id="kALyl_zbNBXz[bO?M@#P">
-        <field name="VAR" id="pXsNe.E*(zRpf4jhDypj">range</field>
-        <value name="VALUE">
-          <block type="math_arithmetic" id="rRdR!6qJADK-byLCbNJi">
-            <field name="OP">MINUS</field>
-            <value name="A">
-              <shadow xmlns="https://bipes.net.br" type="math_number" id="RPn!M-]Bk{8T7D.@1|%s">
-                <field name="NUM">1</field>
-              </shadow>
-              <block type="variables_get" id="V#/@=nnJ|u8PMbD,Q9rC">
-                <field name="VAR" id="Tu#1qo|lwyYMe`Ad:+zB">maxValue</field>
-              </block>
-            </value>
-            <value name="B">
-              <shadow xmlns="https://bipes.net.br" type="math_number">
-                <field name="NUM">1</field>
-              </shadow>
-              <block type="variables_get" id="p_2K{bkhfOw|K!lr`?l0">
-                <field name="VAR" id="hV~X/{FOp_4FNLKQ!PV*">minValue</field>
-              </block>
-            </value>
-          </block>
-        </value>
-        <next>
-          <block type="variables_set" id="Q/g1p5(AP-Kn9YV]j6Rf">
-            <field name="VAR" id="`/]rb0V^iQ_yjMn5Y-]R">diff</field>
-            <value name="VALUE">
-              <block type="math_arithmetic" id="8e|#TweF!D|l!Qu.I@Wr">
-                <field name="OP">MINUS</field>
-                <value name="A">
-                  <shadow xmlns="https://bipes.net.br" type="math_number">
-                    <field name="NUM">1</field>
-                  </shadow>
-                  <block type="variables_get" id="eom^Y5KND`cQF2I.j]fY">
-                    <field name="VAR" id="T@Qv[)qrTpwKY.j@qCF2">value</field>
-                  </block>
-                </value>
-                <value name="B">
-                  <shadow xmlns="https://bipes.net.br" type="math_number">
-                    <field name="NUM">1</field>
-                  </shadow>
-                  <block type="variables_get" id="/_3lHeGRt=2Y{N,lQ?!v">
-                    <field name="VAR" id="hV~X/{FOp_4FNLKQ!PV*">minValue</field>
-                  </block>
-                </value>
-              </block>
-            </value>
-            <next>
-              <block type="variables_set" id="Mdv_WbF^rlPkQ::O!.!o">
-                <field name="VAR" id="|~K%}JqAAzI@tXP(.tQ%">percentage</field>
-                <value name="VALUE">
-                  <block type="math_round" id="ODyffaEwlO5DK}z^[%]c">
-                    <field name="OP">ROUND</field>
-                    <value name="NUM">
-                      <shadow xmlns="https://bipes.net.br" type="math_number" id="3gD0F#_ZBZieH^?8Ra2W">
-                        <field name="NUM">3.1</field>
-                      </shadow>
-                      <block type="math_arithmetic" id="@$`0F9avx*J#@=)ARhfd">
-                        <field name="OP">MULTIPLY</field>
-                        <value name="A">
-                          <shadow xmlns="https://bipes.net.br" type="math_number" id="/!rj($m3kr$swi-S*ic*">
-                            <field name="NUM">1</field>
-                          </shadow>
-                          <block type="math_arithmetic" id="L{D4#?,2RO:O`wm^N3R3">
-                            <field name="OP">DIVIDE</field>
-                            <value name="A">
-                              <shadow xmlns="https://bipes.net.br" type="math_number">
-                                <field name="NUM">1</field>
-                              </shadow>
-                              <block type="variables_get" id="R39-ch!)Bkr+ER*t%cT_">
-                                <field name="VAR" id="`/]rb0V^iQ_yjMn5Y-]R">diff</field>
-                              </block>
-                            </value>
-                            <value name="B">
-                              <shadow xmlns="https://bipes.net.br" type="math_number">
-                                <field name="NUM">1</field>
-                              </shadow>
-                              <block type="variables_get" id="]qHRg_va2D;0!9BB@by:">
-                                <field name="VAR" id="pXsNe.E*(zRpf4jhDypj">range</field>
-                              </block>
-                            </value>
-                          </block>
-                        </value>
-                        <value name="B">
-                          <shadow type="math_number" id="J3Wm?|0an=M5Wkh}S9NM">
-                            <field name="NUM">100</field>
-                          </shadow>
-                        </value>
-                      </block>
-                    </value>
-                  </block>
-                </value>
-              </block>
-            </next>
-          </block>
-        </next>
-      </block>
-    </statement>
-    <value name="RETURN">
-      <block type="variables_get" id="m$,7!svtQT!G|LxTpJ%V">
-        <field name="VAR" id="|~K%}JqAAzI@tXP(.tQ%">percentage</field>
-      </block>
-    </value>
-  </block>
-  <block type="variables_set" id="Zt;^?aIa^ODU=%/Y1Q,d" x="-588" y="-987">
+  <block type="variables_set" id="Zt;^?aIa^ODU=%/Y1Q,d" disabled="true" x="-488" y="-1013">
     <field name="VAR" id="FQW2N,C:;QXmjl_DVn3R">AIR_VALUE</field>
     <value name="VALUE">
       <block type="math_number" id="IeBv3-nl^7C+ht!c#TH:">
@@ -160,7 +38,7 @@
       </block>
     </value>
     <next>
-      <block type="variables_set" id=";=*r5#0:2fWn1B)qMdIl">
+      <block type="variables_set" id=";=*r5#0:2fWn1B)qMdIl" disabled="true">
         <field name="VAR" id=",ScbQ5ZJngW%Rih@dDw}">WATER_VALUE</field>
         <value name="VALUE">
           <block type="math_number" id="v(SrD-2MEt}r9L1_f}@f">
@@ -168,7 +46,7 @@
           </block>
         </value>
         <next>
-          <block type="variables_set" id="V8-y#o}NReN.cp1mA#0a">
+          <block type="variables_set" id="V8-y#o}NReN.cp1mA#0a" disabled="true">
             <field name="VAR" id="s^Ef{[g329s6j:N_I5Fd">ULTRA_SOUND_TRIGGER_PIN</field>
             <value name="VALUE">
               <block type="pinout" id="]8b.b+Itef2$a8B%wxQ{">
@@ -177,16 +55,16 @@
               </block>
             </value>
             <next>
-              <block type="variables_set" id="xzU=*#F9W8?2N/SC`^~*">
+              <block type="variables_set" id="xzU=*#F9W8?2N/SC`^~*" disabled="true">
                 <field name="VAR" id="=l@K}6~3hlD`SA`u=Plj">ULTRA_SOUND_ECHO_PIN</field>
                 <value name="VALUE">
                   <block type="pinout" id="~:`^iHU9,M;YYT=9qK@N">
                     <field name="DEVICE">RPI_Pico</field>
-                    <field name="PIN">27</field>
+                    <field name="PIN">1</field>
                   </block>
                 </value>
                 <next>
-                  <block type="hcsr_init" id="IhI`_5@Kp.19nys6$A|c">
+                  <block type="hcsr_init" id="IhI`_5@Kp.19nys6$A|c" disabled="true">
                     <field name="DHT_PIN_MSG">timeout (us)</field>
                     <field name="DHT_PIN_MSG">trigger pin</field>
                     <field name="DHT_PIN_MSG">timeout (us)</field>
@@ -213,101 +91,6 @@
                         <field name="NUM">10000</field>
                       </shadow>
                     </value>
-                    <next>
-                      <block type="controls_whileUntil" id=".05Dr!`r6-1MShb{H=6O">
-                        <field name="MODE">WHILE</field>
-                        <value name="BOOL">
-                          <block type="logic_boolean" id="S^.*=S+zK{mQAmDvj*A1">
-                            <field name="BOOL">TRUE</field>
-                          </block>
-                        </value>
-                        <statement name="DO">
-                          <block type="variables_set" id="r|-XIP2tMo-4n~ZE.AyC">
-                            <field name="VAR" id="H$Zd@@m)imX$y6/qb8UK">soilMoisturePercentage</field>
-                            <value name="VALUE">
-                              <block type="procedures_callreturn" id="-Fzq@S1RI2$}:lmQ3g1J">
-                                <mutation name="readMoistureInPercent">
-                                  <arg name="airValue"></arg>
-                                  <arg name="waterValue"></arg>
-                                </mutation>
-                                <value name="ARG0">
-                                  <block type="variables_get" id="cU8k=WR#xjPA%{/YFXH#">
-                                    <field name="VAR" id="FQW2N,C:;QXmjl_DVn3R">AIR_VALUE</field>
-                                  </block>
-                                </value>
-                                <value name="ARG1">
-                                  <block type="variables_get" id="h/IpsgxE7oEJ?(V(z;;x">
-                                    <field name="VAR" id=",ScbQ5ZJngW%Rih@dDw}">WATER_VALUE</field>
-                                  </block>
-                                </value>
-                              </block>
-                            </value>
-                            <next>
-                              <block type="text_print" id="o!8l_LB7ihD[HaIa_d_K">
-                                <value name="TEXT">
-                                  <shadow type="text" id="O-%JS.NJ/W}!h;Pi(Nc5">
-                                    <field name="TEXT">Soil moisture (%):</field>
-                                  </shadow>
-                                </value>
-                                <next>
-                                  <block type="text_print" id="UFRIY$E:Dic=5bzG(!hc">
-                                    <value name="TEXT">
-                                      <shadow xmlns="https://bipes.net.br" type="text" id="7nrkrYy;#a[]*GECSDy1">
-                                        <field name="TEXT">abc</field>
-                                      </shadow>
-                                      <block type="variables_get" id="pv_]/+YP$mPC6/O{ED($">
-                                        <field name="VAR" id="H$Zd@@m)imX$y6/qb8UK">soilMoisturePercentage</field>
-                                      </block>
-                                    </value>
-                                    <next>
-                                      <block type="variables_set" id="]f%nOn.#_Yiil{p)I9SB">
-                                        <field name="VAR" id="w%XFcID32I1yDp+(b{gI">distance</field>
-                                        <value name="VALUE">
-                                          <block type="hcsr_read" id="hI({@^#x~,6RDZ0LpO8R">
-                                            <field name="MSG_READ_DHT_TEMP">Get distance (ultrasound sensor)</field>
-                                          </block>
-                                        </value>
-                                        <next>
-                                          <block type="text_print" id="ULMCC7.kG`e8GivjOMHj">
-                                            <value name="TEXT">
-                                              <shadow type="text" id="meC1(wE^{6w9MJcohyVj">
-                                                <field name="TEXT">Measured distance (mm):</field>
-                                              </shadow>
-                                            </value>
-                                            <next>
-                                              <block type="text_print" id="|Jx33z~yp.ov7-oHdnR1">
-                                                <value name="TEXT">
-                                                  <shadow xmlns="https://bipes.net.br" type="text">
-                                                    <field name="TEXT">abc</field>
-                                                  </shadow>
-                                                  <block type="variables_get" id="{MI`:zX+-zhnmJx~`~q:">
-                                                    <field name="VAR" id="w%XFcID32I1yDp+(b{gI">distance</field>
-                                                  </block>
-                                                </value>
-                                                <next>
-                                                  <block type="delay" id="YkK_1_NKMVGEld+Zj#Of">
-                                                    <field name="SCALE">sleep</field>
-                                                    <value name="TIME">
-                                                      <shadow type="math_number" id="ABIQj]}InR`CDeKlfrS[">
-                                                        <field name="NUM">1</field>
-                                                      </shadow>
-                                                    </value>
-                                                  </block>
-                                                </next>
-                                              </block>
-                                            </next>
-                                          </block>
-                                        </next>
-                                      </block>
-                                    </next>
-                                  </block>
-                                </next>
-                              </block>
-                            </next>
-                          </block>
-                        </statement>
-                      </block>
-                    </next>
                   </block>
                 </next>
               </block>
@@ -317,74 +100,125 @@
       </block>
     </next>
   </block>
-  <block type="procedures_defreturn" id="#.i7T`+B7AlE,ijRJ{vM" x="113" y="-912">
-    <mutation>
-      <arg name="airValue" varid="/7k,|C$ctj(Z^6Hn`(yl"></arg>
-      <arg name="waterValue" varid="#l!-B!!;FE{JRv,it;!!"></arg>
-    </mutation>
-    <field name="NAME">readMoistureInPercent</field>
-    <comment pinned="true" h="80" w="160">This function reads the moisture sensor and calculates the percentage.</comment>
-    <statement name="STACK">
-      <block type="variables_set" id="$mM-4VJ0!89(wPeO^HkY">
-        <field name="VAR" id="op4MZDPYimY]YM}|65?S">soilMoistureValue</field>
-        <value name="VALUE">
-          <block type="esp32_adc" id="4IsUd/?N=YQ#$FHG=2m$">
-            <field name="Attenuation">3</field>
-            <field name="Width: ">0</field>
-            <value name="pin">
-              <shadow type="pinout" id="(Md2$~^.~BAIr7G27Dp|">
-                <field name="DEVICE">RPI_Pico</field>
-                <field name="PIN">28</field>
-              </shadow>
-            </value>
-          </block>
-        </value>
+  <block type="controls_whileUntil" id=".05Dr!`r6-1MShb{H=6O" x="-938" y="-762">
+    <field name="MODE">WHILE</field>
+    <value name="BOOL">
+      <block type="logic_boolean" id="S^.*=S+zK{mQAmDvj*A1">
+        <field name="BOOL">TRUE</field>
+      </block>
+    </value>
+    <statement name="DO">
+      <block type="variables_set" id="r|-XIP2tMo-4n~ZE.AyC" disabled="true">
+        <field name="VAR" id="H$Zd@@m)imX$y6/qb8UK">soilMoisturePercentage</field>
         <next>
-          <block type="text_print" id="NFc!@~Di*h%rML@}9$oR" disabled="true">
+          <block type="text_print" id="o!8l_LB7ihD[HaIa_d_K" disabled="true">
             <value name="TEXT">
-              <shadow type="text" id="e;qWY]qZ@uH(!jNDj=/.">
-                <field name="TEXT">Raw value:</field>
+              <shadow type="text" id="O-%JS.NJ/W}!h;Pi(Nc5">
+                <field name="TEXT">Soil moisture (%):</field>
               </shadow>
             </value>
             <next>
-              <block type="text_print" id="cR93%~bPeU102a-iL;7%" disabled="true">
+              <block type="text_print" id="UFRIY$E:Dic=5bzG(!hc" disabled="true">
                 <value name="TEXT">
-                  <shadow xmlns="https://bipes.net.br" type="text" id="}%G7dU@I5*F66?8._M=4">
+                  <shadow xmlns="https://bipes.net.br" type="text" id="7nrkrYy;#a[]*GECSDy1">
                     <field name="TEXT">abc</field>
                   </shadow>
-                  <block type="variables_get" id="BC3HE0J9#PfoF1YHfaWF">
-                    <field name="VAR" id="op4MZDPYimY]YM}|65?S">soilMoistureValue</field>
+                  <block type="variables_get" id="pv_]/+YP$mPC6/O{ED($">
+                    <field name="VAR" id="H$Zd@@m)imX$y6/qb8UK">soilMoisturePercentage</field>
                   </block>
                 </value>
+                <next>
+                  <block type="variables_set" id="]f%nOn.#_Yiil{p)I9SB" disabled="true">
+                    <field name="VAR" id="w%XFcID32I1yDp+(b{gI">distance</field>
+                    <value name="VALUE">
+                      <block type="hcsr_read" id="hI({@^#x~,6RDZ0LpO8R">
+                        <field name="MSG_READ_DHT_TEMP">Get distance (ultrasound sensor)</field>
+                      </block>
+                    </value>
+                    <next>
+                      <block type="text_print" id="ULMCC7.kG`e8GivjOMHj">
+                        <value name="TEXT">
+                          <shadow type="text" id="meC1(wE^{6w9MJcohyVj">
+                            <field name="TEXT">Test</field>
+                          </shadow>
+                        </value>
+                        <next>
+                          <block type="text_print" id="|Jx33z~yp.ov7-oHdnR1" disabled="true">
+                            <value name="TEXT">
+                              <shadow xmlns="https://bipes.net.br" type="text">
+                                <field name="TEXT">abc</field>
+                              </shadow>
+                              <block type="variables_get" id="{MI`:zX+-zhnmJx~`~q:">
+                                <field name="VAR" id="w%XFcID32I1yDp+(b{gI">distance</field>
+                              </block>
+                            </value>
+                            <next>
+                              <block type="gpio_set" id="H2lM2Dh_6Tq5GK!!|!f/">
+                                <value name="pin">
+                                  <shadow type="pinout" id="tR!ST9}}-JZaF`|hrJQb">
+                                    <field name="DEVICE">RPI_Pico</field>
+                                    <field name="PIN">13</field>
+                                  </shadow>
+                                </value>
+                                <value name="value">
+                                  <shadow xmlns="https://bipes.net.br" type="logic_boolean" id="02?-%1]NfLz*^j_0C0$`">
+                                    <field name="BOOL">TRUE</field>
+                                  </shadow>
+                                  <block type="math_number" id="?-tRJi([kR|x?U=V9Ey3">
+                                    <field name="NUM">1</field>
+                                  </block>
+                                </value>
+                                <next>
+                                  <block type="delay" id="YkK_1_NKMVGEld+Zj#Of">
+                                    <field name="SCALE">sleep_ms</field>
+                                    <value name="TIME">
+                                      <shadow type="math_number" id="ABIQj]}InR`CDeKlfrS[">
+                                        <field name="NUM">250</field>
+                                      </shadow>
+                                    </value>
+                                    <next>
+                                      <block type="gpio_set" id=".(7QA2G04#sL%dMQ/XPt">
+                                        <value name="pin">
+                                          <shadow type="pinout" id=":|~zZ52u=s}?z2!F`QjB">
+                                            <field name="DEVICE">RPI_Pico</field>
+                                            <field name="PIN">13</field>
+                                          </shadow>
+                                        </value>
+                                        <value name="value">
+                                          <shadow xmlns="https://bipes.net.br" type="logic_boolean" id="c~{HKrQHAy;BN,Db.!n{">
+                                            <field name="BOOL">FALSE</field>
+                                          </shadow>
+                                          <block type="math_number" id="T9x!P5Ux5Sq6zU^9Zz|i">
+                                            <field name="NUM">0</field>
+                                          </block>
+                                        </value>
+                                        <next>
+                                          <block type="delay" id="k$i|vWLD]GimJ#*fOoBQ">
+                                            <field name="SCALE">sleep_ms</field>
+                                            <value name="TIME">
+                                              <shadow type="math_number" id="{s3F/*W!2=zu.]hOUXT^">
+                                                <field name="NUM">500</field>
+                                              </shadow>
+                                            </value>
+                                          </block>
+                                        </next>
+                                      </block>
+                                    </next>
+                                  </block>
+                                </next>
+                              </block>
+                            </next>
+                          </block>
+                        </next>
+                      </block>
+                    </next>
+                  </block>
+                </next>
               </block>
             </next>
           </block>
         </next>
       </block>
     </statement>
-    <value name="RETURN">
-      <block type="procedures_callreturn" id="ir(iTK|DabxB/Fxf}X1K">
-        <mutation name="calculatePercentageInRange">
-          <arg name="value"></arg>
-          <arg name="maxValue"></arg>
-          <arg name="minValue"></arg>
-        </mutation>
-        <value name="ARG0">
-          <block type="variables_get" id="aD#k6-5|G};bPzU{hy!}">
-            <field name="VAR" id="op4MZDPYimY]YM}|65?S">soilMoistureValue</field>
-          </block>
-        </value>
-        <value name="ARG1">
-          <block type="variables_get" id="gT3|7f}DGJ%@p`kYe%bR">
-            <field name="VAR" id=",ScbQ5ZJngW%Rih@dDw}">WATER_VALUE</field>
-          </block>
-        </value>
-        <value name="ARG2">
-          <block type="variables_get" id="rBN8${@DB[!@NhNe+L$_">
-            <field name="VAR" id="FQW2N,C:;QXmjl_DVn3R">AIR_VALUE</field>
-          </block>
-        </value>
-      </block>
-    </value>
   </block>
 </xml>
