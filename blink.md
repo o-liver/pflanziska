@@ -18,7 +18,7 @@ Eine LED, oder Leuchtdiode, ist ein kleines Bauelement, das Licht ausstrahlt, we
 1. Stecke den Raspberry PI pico ins Breadboard.
 2. Verbinde die LED mit dem Breadboard. Achte darauf, dass die längere (positive) Bein der LED an einen GPIO-Pin des Raspberry PI pico angeschlossen wird und die kürzere (negative) Bein über einen Widerstand mit dem `GND` (Erdung) des Raspberry PI pico verbunden wird.
 
-![Hier kommt das Pin-Diagramm](URL-zum-Pin-Diagramm)
+    ![fritzing](./pics/fritzing.jpg)
 
 ### 2. Block-Code Programmierung mit BIPES
 
@@ -27,7 +27,7 @@ Anstatt dir genau zu sagen, wie du die Blöcke zusammensetzen sollst, werden wir
 1. Öffne BIPES in deinem Browser.
 2. Verwende die folgenden Blöcke:
 
-   ![Hier kommt der Screenshot vom 'forever'-Block](URL-zum-forever-Block)
+   ![forever block](./pics/forever_loop.png)
 
    ![Hier kommt der Screenshot vom 'set gpio'-Block](URL-zum-set-gpio-Block) x2
 
