@@ -10,30 +10,37 @@ Eine LED, oder Leuchtdiode, ist ein kleines Bauelement, das Licht ausstrahlt, we
 - LED (Leuchtdiode)
 - Widerstand (220 Ohm oder ähnlich)
 - Breadboard und Verbindungskabel
+- Kabel
 
 ## Schritt-für-Schritt Anleitung
 
-### 1. Verbindung herstellen
+### 1. Fritzing
 
-1. Stecke den Raspberry PI pico ins Breadboard.
-2. Verbinde die LED mit dem Breadboard. Achte darauf, dass die längere (positive) Bein der LED an einen GPIO-Pin des Raspberry PI pico angeschlossen wird und die kürzere (negative) Bein über einen Widerstand mit dem `GND` (Erdung) des Raspberry PI pico verbunden wird.
+Verkabel den Raspberry PI Pico wie im Bild unten, achte dabei darauf dass das längere Bein der LED mit dem positiven Pol und das kürzere mit `GND` (Erde) verbunden ist. 
 
-    ![fritzing](./pics/fritzing.jpg)
+![fritzing](./pics/fritzing.png)
 
 ### 2. Block-Code Programmierung mit BIPES
 
 Anstatt dir genau zu sagen, wie du die Blöcke zusammensetzen sollst, werden wir dir Bilder von den benötigten Blöcken zeigen. Es ist deine Aufgabe, herauszufinden, wie sie zusammenpassen!
 
-1. Öffne BIPES in deinem Browser.
-2. Verwende die folgenden Blöcke:
+Ziel ist es eine LED zum blinken zu bringen.
+Verwende hierzu folgenden Blöcke:
 
-   ![forever block](./pics/forever_loop.png)
+1. Unter `Loops`, einmal:
+    
+    ![forever block](./pics/forever_loop.png)
 
-   ![Hier kommt der Screenshot vom 'set gpio'-Block](URL-zum-set-gpio-Block) x2
+2. Unter `Machine -> In/Out Pins`, zwei mal:
+    
+    ![set GPIO](./pics/setGPIO.png)
 
-   ![Hier kommt der Screenshot vom 'sleep'-Block](URL-zum-sleep-Block) x2
+3. Unter `Timing`, zwei mal:
 
-3. Experimentiere mit den Blöcken, um das gewünschte Blinkmuster zu erstellen und übertrage dann das Programm auf den Raspberry PI pico.
+    ![Delay](./pics/delay.png)
+
+
+Experimentiere mit den Blöcken, um das gewünschte Blinkmuster zu erstellen und übertrage dann das Programm auf den Raspberry PI pico.
 
 ### 3. Teste deine LED
 
@@ -44,7 +51,8 @@ Sobald du das Programm übertragen hast, sollte die LED anfangen zu blinken.
 Wenn die LED nicht blinkt:
 
 - Überprüfe alle Verbindungen.
-- Stelle sicher, dass der Widerstand korrekt platziert ist.
+- Schau das die richtigen Pins vom Pico sowohl im BIPES gewählt wurden.
+- Stelle sicher, dass der Widerstand und die LED korrekt platziert sind.
 - Überprüfe, ob du die richtigen Blöcke in BIPES verwendet hast und ob sie in der richtigen Reihenfolge sind.
 
 ## Fazit
@@ -66,6 +74,3 @@ In der Elektrotechnik sind Dioden extrem wichtig und haben viele Anwendungen. Hi
 3. **Signalmodulation**: In Kommunikations- und Radiofrequenzsystemen können Dioden dazu verwendet werden, Signale zu modulieren oder zu demodulieren.
 
 Wenn Strom durch eine spezielle Art von Diode, nämlich eine LED, fließt, gibt sie Licht ab. Deshalb sehen wir LEDs oft in Anzeigen, Taschenlampen und vielen anderen Anwendungen, wo Licht benötigt wird.
-
-
-
